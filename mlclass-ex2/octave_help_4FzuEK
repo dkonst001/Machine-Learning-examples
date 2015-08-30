@@ -1,0 +1,49 @@
+\input texinfo
+
+
+@deffn  {Command} whos
+@deffnx {Command} whos pattern @dots{}
+@deffnx {Command} whos option pattern @dots{}
+@deffnx {Command} S = whos("pattern", @dots{})
+Provide detailed information on currently defined variables matching the
+given patterns.  Options and pattern syntax are the same as for the
+@code{who} command.  Extended information about each variable is
+summarized in a table with the following default entries.
+
+@table @asis
+@item Attr
+Attributes of the listed variable.  Possible attributes are:
+@table @asis
+@item blank
+Variable in local scope
+@item @code{g}
+Variable with global scope
+@item @code{p}
+Persistent variable
+@end table
+@item Name
+The name of the variable.
+@item Size
+The logical size of the variable.  A scalar is 1x1, a vector is 1xN or Nx1,
+a 2-D matrix is MxN.
+@item Bytes
+The amount of memory currently used to store the variable.
+@item Class
+The class of the variable.  Examples include double, single, char, uint16,
+cell, and struct.
+@end table
+
+The table can be customized to display more or less information through
+the function @code{whos_line_format}.
+
+If @code{whos} is called as a function, return a struct array of defined
+variable names matching the given patterns.  Fields in the structure
+describing each variable are: name, size, bytes, class, global, sparse, 
+complex, nesting, persistent.
+
+See also: who, whos_line_format
+
+
+@end deffn
+
+@bye

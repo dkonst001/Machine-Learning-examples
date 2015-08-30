@@ -1,0 +1,20 @@
+\input texinfo
+
+
+@deftypefn {Mapping Function} {} log (@var{x})
+Compute the natural logarithm,
+@tex
+$\ln{(x)},$
+@end tex
+@ifnottex
+@code{ln (@var{x})},
+@end ifnottex
+for each element of @var{x}.  To compute the
+matrix logarithm, see @ref{Linear Algebra}.
+
+See also: exp, log1p, log2, log10, logspace
+
+
+@end deftypefn
+
+@bye
